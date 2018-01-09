@@ -1,9 +1,10 @@
 (function () {
   initMobileMenu()
+  initVideoModal()
   if (PAGE_TYPE) {
     initVersionSelect()
-    initSubHeaders()
     initApiSpecLinks()
+    initSubHeaders()
     initLocationHashFuzzyMatching()
   }
 
@@ -48,7 +49,7 @@
       hash = hash.substr(1)
     }
 
-    // Escape characthers
+    // Escape characters
     try {
       hash = decodeURIComponent(hash)
     } catch (e) {}
@@ -135,6 +136,35 @@
       if (Math.abs(xDiff) > Math.abs(yDiff)) {
         if (xDiff > 0 && start.x <= 80) sidebar.classList.add('open')
         else sidebar.classList.remove('open')
+      }
+    })
+  }
+
+  /**
+  * Modal Video Player
+  */
+  function initVideoModal () {
+    var modalButton = document.getElementById('modal-player')
+    var videoModal = document.getElementById('video-modal')
+    var videoWrapper = videoModal.querySelector('.video-space')
+    var overlay = document.createElement('div')
+        overlay.className = 'overlay'
+
+
+    modalButton.addEventListener('click', function(event) {
+      event.stopPropagation()
+      videoModal.classList.toggle('open')
+      document.body.classList.toggle('stop-scroll')
+      document.body.appendChild(overlay)
+      videoWrapper.innerHTML = '<iframe style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;" src="http://player.youku.com/embed/XMzMwMTYyODMyNA==" frameborder="0" allowfullscreen></iframe>'
+    })
+
+    document.body.addEventListener('click', function(e) {
+      if (e.target !== modalButton && !videoModal.contains(e.target)) {
+        videoModal.classList.remove('open')
+        document.body.classList.remove('stop-scroll')
+        document.body.removeChild(overlay)
+        videoWrapper.innerHTML = ''
       }
     })
   }

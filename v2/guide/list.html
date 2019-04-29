@@ -58,7 +58,10 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
-    <script>window.PAGE_TYPE = "guide"</script>
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
 
     <!-- ga -->
     <script>
@@ -78,7 +81,7 @@
     </div>
     <div id="header">
   <a id="logo" href="/">
-    <img src="/images/logo.png">
+    <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
   </a>
   <ul id="nav">
@@ -90,12 +93,22 @@
 <li class="nav-dropdown-container learn">
   <a class="nav-link current">学习</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
-      <li><a href="/v2/api/" class="nav-link">API</a></li>
-      <li><a href="/v2/style-guide/" class="nav-link">风格指南 (beta)</a></li>
-      <li><a href="/v2/examples/" class="nav-link">示例</a></li>
-    </ul></li>
+    <li><h4>文档</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">风格指南</a></li>
+        <li><a href="/v2/examples/" class="nav-link">示例</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Cookbook</a></li>
+      </ul>
+    </li>
+    <li><h4>视频教程</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (英文)</a></li>
+      </ul>
+    </li>
   </ul>
 </li>
 
@@ -106,24 +119,27 @@
     <li><ul>
       <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">论坛</a></li>
       <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">聊天室</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">聚会</a></li>
     </ul></li>
     <li><h4>工具</h4></li>
     <li>
       <ul>
         <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
-        <li><a href="https://vuejs-templates.github.io/webpack" class="nav-link" target="_blank">webpack 模板</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+        <li><a href="https://cli.vuejs.org/zh/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org/zh/" class="nav-link" target="_blank">Vue Loader</a></li>
       </ul>
     </li>
     <li><h4>核心插件</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue 服务端渲染</a></li>
+      <li><a href="https://router.vuejs.org/zh/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/zh/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/zh/" class="nav-link" target="_blank">Vue 服务端渲染</a></li>
     </ul></li>
     <li><h4>信息</h4></li>
     <li><ul>
-      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">周刊</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">活动</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">博客</a></li>
       <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">工作</a></li>
@@ -141,11 +157,12 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
+      <li><a href="https://www.smallsticker.com/%E8%B4%B4%E7%BA%B8/vue.html" class="nav-link">贴纸</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -184,12 +201,22 @@
 <li class="nav-dropdown-container learn">
   <a class="nav-link current">学习</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
-      <li><a href="/v2/api/" class="nav-link">API</a></li>
-      <li><a href="/v2/style-guide/" class="nav-link">风格指南 (beta)</a></li>
-      <li><a href="/v2/examples/" class="nav-link">示例</a></li>
-    </ul></li>
+    <li><h4>文档</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">风格指南</a></li>
+        <li><a href="/v2/examples/" class="nav-link">示例</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Cookbook</a></li>
+      </ul>
+    </li>
+    <li><h4>视频教程</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (英文)</a></li>
+      </ul>
+    </li>
   </ul>
 </li>
 
@@ -200,24 +227,27 @@
     <li><ul>
       <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">论坛</a></li>
       <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">聊天室</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">聚会</a></li>
     </ul></li>
     <li><h4>工具</h4></li>
     <li>
       <ul>
         <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
-        <li><a href="https://vuejs-templates.github.io/webpack" class="nav-link" target="_blank">webpack 模板</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+        <li><a href="https://cli.vuejs.org/zh/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org/zh/" class="nav-link" target="_blank">Vue Loader</a></li>
       </ul>
     </li>
     <li><h4>核心插件</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue 服务端渲染</a></li>
+      <li><a href="https://router.vuejs.org/zh/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/zh/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/zh/" class="nav-link" target="_blank">Vue 服务端渲染</a></li>
     </ul></li>
     <li><h4>信息</h4></li>
     <li><ul>
-      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">周刊</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">活动</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">博客</a></li>
       <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">工作</a></li>
@@ -235,11 +265,12 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
+      <li><a href="https://www.smallsticker.com/%E8%B4%B4%E7%BA%B8/vue.html" class="nav-link">贴纸</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -262,49 +293,63 @@
 
     </ul>
     <div class="list">
-      <div class="main-sponsor">
-        <span>赞助者</span><br>
-        <a id="main-sponsor-link" target="_blank" style="display: block; margin: 6px 0;">
-          <img id="main-sponsor-image" style="border-radius: 3px;">
-        </a>
-        <script>
-        (function () {
-          var API = 'https://xiaozhuanlan.com/example/baner_settings'
-          var req = new XMLHttpRequest()
-          var data = {
-            "link_url": "https://xiaozhuanlan.com",
-            "img_url": "https://diycode.b0.upaiyun.com/photo/2017/15ebaae7745e70876cf20c0ee93bdc9e.png"
-          }
-          req.onreadystatechange = function () {
-            if (req.readyState == 4) {
-            if (req.status >= 200 && req.status < 300) {
-              try {
-                data = JSON.parse(req.responseText)
-              } catch (e) {}
-            }
-            document.getElementById('main-sponsor-link').href = data.link_url
-            document.getElementById('main-sponsor-image').src = data.img_url
-            }
-          }
-          req.open('GET', API)
-          req.send()
-        })()
-        </script>
-      </div>
-      <a class="become-backer" href="/support-vuejs">
-        成为赞助者
-      </a>
-      <h2>
-        
-        教程
-        
-          <select class="version-select">
-            <option value="SELF" selected>2.x</option>
-            <option value="v1">1.0</option>
-          </select>
-        
-      </h2>
-      <ul class="menu-root">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>特别赞助商</span>
+    <div>
+      <a href="http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" class="logo">
+      <img src="/images/dcloud.gif" alt="">
+    </a>
+    </div>
+  </div>
+</div>
+
+<!--
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>白金赞助商</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    成为赞助者
+  </a>
+</div>
+
+-->
+
+      
+        <h2>
+          
+          教程
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
   
     
     
@@ -318,7 +363,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/installation.html" class="sidebar-link">安装</a>
@@ -334,7 +379,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/index.html" class="sidebar-link">介绍</a>
@@ -350,7 +395,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/instance.html" class="sidebar-link">Vue 实例</a>
@@ -366,7 +411,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/syntax.html" class="sidebar-link">模板语法</a>
@@ -382,10 +427,10 @@
       
       
       
-    
+      
     
     <li>
-      <a href="/v2/guide/computed.html" class="sidebar-link">计算属性和观察者</a>
+      <a href="/v2/guide/computed.html" class="sidebar-link">计算属性和侦听器</a>
     </li>
   
     
@@ -398,7 +443,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a>
@@ -414,7 +459,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/conditional.html" class="sidebar-link">条件渲染</a>
@@ -430,7 +475,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/list.html" class="sidebar-link current">列表渲染</a>
@@ -446,7 +491,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/events.html" class="sidebar-link">事件处理</a>
@@ -462,7 +507,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/forms.html" class="sidebar-link">表单输入绑定</a>
@@ -478,14 +523,113 @@
       
       
       
-    
+      
     
     <li>
-      <a href="/v2/guide/components.html" class="sidebar-link">组件</a>
+      <a href="/v2/guide/components.html" class="sidebar-link">组件基础</a>
     </li>
   
     
     
+      
+      
+        <li><h3>深入了解组件</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">组件注册</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Prop</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">自定义事件</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">插槽</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">动态组件 & 异步组件</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">处理边界情况</a>
+    </li>
+  
+    
+    
+      
       
       
         <li><h3>过渡 & 动画</h3></li>
@@ -496,7 +640,6 @@
       
       
       
-    
     
     <li>
       <a href="/v2/guide/transitions.html" class="sidebar-link">进入/离开 & 列表过渡</a>
@@ -512,7 +655,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/transitioning-state.html" class="sidebar-link">状态过渡</a>
@@ -520,6 +663,7 @@
   
     
     
+      
       
       
       
@@ -531,9 +675,8 @@
       
       
     
-    
     <li>
-      <a href="/v2/guide/mixins.html" class="sidebar-link">混合</a>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">混入</a>
     </li>
   
     
@@ -546,7 +689,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/custom-directive.html" class="sidebar-link">自定义指令</a>
@@ -562,7 +705,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/render-function.html" class="sidebar-link">渲染函数 & JSX</a>
@@ -578,7 +721,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/plugins.html" class="sidebar-link">插件</a>
@@ -594,7 +737,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/filters.html" class="sidebar-link">过滤器</a>
@@ -606,29 +749,13 @@
       
       
       
+      
         <li><h3>工具</h3></li>
       
       
       
       
       
-    
-    
-    <li>
-      <a href="/v2/guide/deployment.html" class="sidebar-link">生产环境部署</a>
-    </li>
-  
-    
-    
-      
-      
-      
-      
-      
-      
-      
-      
-    
     
     <li>
       <a href="/v2/guide/single-file-components.html" class="sidebar-link">单文件组件</a>
@@ -644,7 +771,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/unit-testing.html" class="sidebar-link">单元测试</a>
@@ -660,7 +787,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript 支持</a>
@@ -673,12 +800,28 @@
       
       
       
-        <li><h3>规模化</h3></li>
       
       
       
       
     
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">生产环境部署</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>规模化</h3></li>
+      
+      
+      
+      
     
     <li>
       <a href="/v2/guide/routing.html" class="sidebar-link">路由</a>
@@ -694,7 +837,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/state-management.html" class="sidebar-link">状态管理</a>
@@ -710,7 +853,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/ssr.html" class="sidebar-link">服务端渲染</a>
@@ -724,11 +867,11 @@
       
       
       
+      
         <li><h3>内在</h3></li>
       
       
       
-    
     
     <li>
       <a href="/v2/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
@@ -743,10 +886,10 @@
       
       
       
+      
         <li><h3>迁移</h3></li>
       
       
-    
     
     <li>
       <a href="/v2/guide/migration.html" class="sidebar-link">从 Vue 1.x 迁移</a>
@@ -762,7 +905,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">从 Vue Router 0.7.x 迁移</a>
@@ -778,7 +921,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/migration-vuex.html" class="sidebar-link">从 Vuex 0.6.x 迁移到 1.0</a>
@@ -794,9 +937,9 @@
       
       
       
+      
         <li><h3>更多</h3></li>
       
-    
     
     <li>
       <a href="/v2/guide/comparison.html" class="sidebar-link">对比其他框架</a>
@@ -812,7 +955,7 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/join.html" class="sidebar-link">加入 Vue.js 社区</a>
@@ -828,27 +971,69 @@
       
       
       
-    
+      
     
     <li>
       <a href="/v2/guide/team.html" class="sidebar-link">认识团队</a>
     </li>
   
-  
 </ul>
 
+      
     </div>
   </div>
 </div>
+
+<!--
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>白金赞助商</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    成为赞助者
+  </a>
+</div>
+
+-->
 
 
 <div class="content guide with-sidebar list-guide">
   
     
       <div id="ad">
-  <a href="https://time.geekbang.org/?utm_source=website&utm_medium=vue&utm_campaign=routine&utm_content=tuijian" target="_blank" rel="nofollow">
-    <img src="/images/geekbang2.jpg" alt="极客时间">
+  <span style="float: right;">广告</span>
+  <a href="https://ke.qq.com/course/392130?saleToken=992600&from=pclink" target="_blank" rel="noopener">
+    <img src="/images/tencent-ad.png">
   </a>
+  <!-- <a href="https://time.geekbang.org/course/intro/163?code=Cs1WwK3tTrzMwGm1q-0VySZ9DhJaB-pOIkESucJlfHc%3D&utm_term=SPoster" target="_blank" rel="noopener">
+    <img src="/images/geekbang-ad.jpg">
+  </a> -->
+  <!-- <script
+    async
+    type="text/javascript"
+    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    id="_carbonads_js">
+  </script> -->
 </div>
 
     
@@ -856,10 +1041,32 @@
   
     <h1>列表渲染</h1>
   
+
+  <div class="ad-pagetop">
+  <a href="http://www.tp-shop.cn/index.php?http_referer=vuejs" target="_blank" rel="noopener noreferrer">
+    <span class="name">TPshop</span>
+    <span class="description">中国免费商城系统 - 搜豹商城系统</span>
+    <span class="action">立即查看 &gt;</span>
+  </a>
+</div>
+
+
   
-  <h2 id="用-v-for-把一个数组对应为一组元素"><a href="#用-v-for-把一个数组对应为一组元素" class="headerlink" title="用 v-for 把一个数组对应为一组元素"></a>用 <code>v-for</code> 把一个数组对应为一组元素</h2><p>我们用 <code>v-for</code> 指令根据一组数组的选项列表进行渲染。<code>v-for</code> 指令需要使用 <code>item in items</code> 形式的特殊语法，<code>items</code> 是源数据数组并且 <code>item</code> 是数组元素迭代的别名。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.message &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#example-1'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    items: [</span><br><span class="line">      &#123; <span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+    <h2 id="用-v-for-把一个数组对应为一组元素"><a href="#用-v-for-把一个数组对应为一组元素" class="headerlink" title="用 v-for 把一个数组对应为一组元素"></a>用 <code>v-for</code> 把一个数组对应为一组元素</h2><p>我们用 <code>v-for</code> 指令根据一组数组的选项列表进行渲染。<code>v-for</code> 指令需要使用 <code>item in items</code> 形式的特殊语法，<code>items</code> 是源数据数组并且 <code>item</code> 是数组元素迭代的别名。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span>&gt;</span>
+    &#123;&#123; item.message &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> example1 = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-1'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [
+      &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'Foo'</span> &#125;,
+      &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'Bar'</span> &#125;
+    ]
+  &#125;
+&#125;)</code></pre>
 <p>结果：</p>
 
 <ul id="example-1" class="demo">
@@ -885,8 +1092,21 @@ var example1 = new Vue({
 </script>
 
 <p>在 <code>v-for</code> 块中，我们拥有对父作用域属性的完全访问权限。<code>v-for</code> 还支持一个可选的第二个参数为当前项的索引。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span>&gt;</span></span><br><span class="line">    &#123;&#123; parentMessage &#125;&#125; - &#123;&#123; index &#125;&#125; - &#123;&#123; item.message &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> example2 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#example-2'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    parentMessage: <span class="string">'Parent'</span>,</span><br><span class="line">    items: [</span><br><span class="line">      &#123; <span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-2"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(item, index) in items"</span>&gt;</span>
+    &#123;&#123; parentMessage &#125;&#125; - &#123;&#123; index &#125;&#125; - &#123;&#123; item.message &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> example2 = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-2'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">parentMessage</span>: <span class="hljs-string">'Parent'</span>,
+    <span class="hljs-attr">items</span>: [
+      &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'Foo'</span> &#125;,
+      &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'Bar'</span> &#125;
+    ]
+  &#125;
+&#125;)</code></pre>
 <p>结果：</p>
 
 <ul id="example-2" class="demo">
@@ -913,10 +1133,23 @@ var example2 = new Vue({
 </script>
 
 <p>你也可以用 <code>of</code> 替代 <code>in</code> 作为分隔符，因为它是最接近 JavaScript 迭代器的语法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item of items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item of items"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <h2 id="一个对象的-v-for"><a href="#一个对象的-v-for" class="headerlink" title="一个对象的 v-for"></a>一个对象的 <code>v-for</code></h2><p>你也可以用 <code>v-for</code> 通过一个对象的属性来迭代。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"v-for-object"</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"value in object"</span>&gt;</span></span><br><span class="line">    &#123;&#123; value &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#v-for-object'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    object: &#123;</span><br><span class="line">      firstName: <span class="string">'John'</span>,</span><br><span class="line">      lastName: <span class="string">'Doe'</span>,</span><br><span class="line">      age: <span class="number">30</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"v-for-object"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"value in object"</span>&gt;</span>
+    &#123;&#123; value &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#v-for-object'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">object</span>: &#123;
+      <span class="hljs-attr">title</span>: <span class="hljs-string">'How to do lists in Vue'</span>,
+      <span class="hljs-attr">author</span>: <span class="hljs-string">'Jane Doe'</span>,
+      <span class="hljs-attr">publishedAt</span>: <span class="hljs-string">'2016-04-10'</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
 <p>结果：</p>
 
 <ul id="v-for-object" class="demo">
@@ -929,51 +1162,55 @@ new Vue({
   el: '#v-for-object',
   data: {
     object: {
-      firstName: 'John',
-      lastName: 'Doe',
-      age: 30
+      title: 'How to do lists in Vue',
+      author: 'Jane Doe',
+      publishedAt: '2016-04-10'
     }
   }
 })
 </script>
 
-<p>你也可以提供第二个的参数为键名：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(value, key) in object"</span>&gt;</span></span><br><span class="line">  &#123;&#123; key &#125;&#125;: &#123;&#123; value &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你也可以提供第二个的参数为 property 名称 (也就是键名)：</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(value, name) in object"</span>&gt;</span>
+  &#123;&#123; name &#125;&#125;: &#123;&#123; value &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 
-<div id="v-for-object-value-key" class="demo">
-  <div v-for="(value, key) in object">
-    {{ key }}: {{ value }}
+<div id="v-for-object-value-name" class="demo">
+  <div v-for="(value, name) in object">
+    {{ name }}: {{ value }}
   </div>
 </div>
 <script>
 new Vue({
-  el: '#v-for-object-value-key',
+  el: '#v-for-object-value-name',
   data: {
     object: {
-      firstName: 'John',
-      lastName: 'Doe',
-      age: 30
+      title: 'How to do lists in Vue',
+      author: 'Jane Doe',
+      publishedAt: '2016-04-10'
     }
   }
 })
 </script>
 
 <p>第三个参数为索引：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(value, key, index) in object"</span>&gt;</span></span><br><span class="line">  &#123;&#123; index &#125;&#125;. &#123;&#123; key &#125;&#125;: &#123;&#123; value &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(value, name, index) in object"</span>&gt;</span>
+  &#123;&#123; index &#125;&#125;. &#123;&#123; name &#125;&#125;: &#123;&#123; value &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 
-<div id="v-for-object-value-key-index" class="demo">
-  <div v-for="(value, key, index) in object">
-    {{ index }}. {{ key }}: {{ value }}
+<div id="v-for-object-value-name-index" class="demo">
+  <div v-for="(value, name, index) in object">
+    {{ index }}. {{ name }}: {{ value }}
   </div>
 </div>
 <script>
 new Vue({
-  el: '#v-for-object-value-key-index',
+  el: '#v-for-object-value-name-index',
   data: {
     object: {
-      firstName: 'John',
-      lastName: 'Doe',
-      age: 30
+      title: 'How to do lists in Vue',
+      author: 'Jane Doe',
+      publishedAt: '2016-04-10'
     }
   }
 })
@@ -981,12 +1218,17 @@ new Vue({
 
 <p class="tip">在遍历对象时，是按 <code>Object.keys()</code> 的结果遍历，但是不能保证它的结果在不同的 JavaScript 引擎下是一致的。</p>
 
-<h2 id="key"><a href="#key" class="headerlink" title="key"></a><code>key</code></h2><p>当 Vue.js 用 <code>v-for</code> 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， 而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。这个类似 Vue 1.x 的 <code>track-by=&quot;$index&quot;</code> 。</p>
-<p>这个默认的模式是高效的，但是只适用于<strong>不依赖子组件状态或临时 DOM 状态 (例如：表单输入值) 的列表渲染输出</strong>。</p>
-<p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 <code>key</code> 属性。理想的 <code>key</code> 值是每项都有的且唯一的 id。这个特殊的属性相当于 Vue 1.x 的 <code>track-by</code> ，但它的工作方式类似于一个属性，所以你需要用 <code>v-bind</code> 来绑定动态值 (在这里使用简写)：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 内容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>建议尽可能在使用 <code>v-for</code> 时提供 <code>key</code>，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。</p>
-<p>因为它是 Vue 识别节点的一个通用机制，<code>key</code> 并不与 <code>v-for</code> 特别关联，key 还具有其他用途，我们将在后面的指南中看到其他用途。</p>
+<h2 id="维护状态"><a href="#维护状态" class="headerlink" title="维护状态"></a>维护状态</h2><p>当 Vue.js 用 <code>v-for</code> 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， 而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。这个类似 Vue 1.x 的 <code>track-by=&quot;$index&quot;</code> 。</p>
+<p>这个默认的模式是高效的，但是<strong>只适用于不依赖子组件状态或临时 DOM 状态 (例如：表单输入值) 的列表渲染输出</strong>。</p>
+<p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 <code>key</code> 属性：</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item.id"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- 内容 --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>建议尽可能在使用 <code>v-for</code> 时提供 <code>key</code> attribute，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。</p>
+<p>因为它是 Vue 识别节点的一个通用机制，<code>key</code> 并不与 <code>v-for</code> 特别关联，<code>key</code> 还具有其他用途，我们将在后面的指南中看到其他用途。</p>
+<p class="tip">不要使用对象或数组之类的非原始类型值作为 <code>v-for</code> 的 <code>key</code>。用字符串或数类型的值取而代之。</p>
+
+<p>更多 <code>key</code> attribute 的细节用法请移步至 <a href="https://cn.vuejs.org/v2/api/#key"><code>key</code> 的 API 文档</a>。</p>
 <h2 id="数组更新检测"><a href="#数组更新检测" class="headerlink" title="数组更新检测"></a>数组更新检测</h2><h3 id="变异方法"><a href="#变异方法" class="headerlink" title="变异方法"></a>变异方法</h3><p>Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：</p>
 <ul>
 <li><code>push()</code></li>
@@ -999,39 +1241,93 @@ new Vue({
 </ul>
 <p>你打开控制台，然后用前面例子的 <code>items</code> 数组调用变异方法：<code>example1.items.push({ message: &#39;Baz&#39; })</code> 。</p>
 <h3 id="替换数组"><a href="#替换数组" class="headerlink" title="替换数组"></a>替换数组</h3><p>变异方法 (mutation method)，顾名思义，会改变被这些方法调用的原始数组。相比之下，也有非变异 (non-mutating method) 方法，例如：<code>filter()</code>, <code>concat()</code> 和 <code>slice()</code> 。这些不会改变原始数组，但<strong>总是返回一个新数组</strong>。当使用非变异方法时，可以用新数组替换旧数组：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">example1.items = example1.items.filter(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> item.message.match(<span class="regexp">/Foo/</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">example1.items = example1.items.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> item.message.match(<span class="hljs-regexp">/Foo/</span>)
+&#125;)</code></pre>
 <p>你可能认为这将导致 Vue 丢弃现有 DOM 并重新渲染整个列表。幸运的是，事实并非如此。Vue 为了使得 DOM 元素得到最大范围的重用而实现了一些智能的、启发式的方法，所以用一个含有相同元素的数组去替换原来的数组是非常高效的操作。</p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>由于 JavaScript 的限制，Vue 不能检测以下变动的数组：</p>
 <ol>
 <li>当你利用索引直接设置一个项时，例如：<code>vm.items[indexOfItem] = newValue</code></li>
 <li>当你修改数组的长度时，例如：<code>vm.items.length = newLength</code></li>
 </ol>
+<p>举个例子：</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>]
+  &#125;
+&#125;)
+vm.items[<span class="hljs-number">1</span>] = <span class="hljs-string">'x'</span> <span class="hljs-comment">// 不是响应性的</span>
+vm.items.length = <span class="hljs-number">2</span> <span class="hljs-comment">// 不是响应性的</span></code></pre>
 <p>为了解决第一类问题，以下两种方式都可以实现和 <code>vm.items[indexOfItem] = newValue</code> 相同的效果，同时也将触发状态更新：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Vue.set</span></span><br><span class="line">Vue.set(example1.items, indexOfItem, newValue)</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Array.prototype.splice</span></span><br><span class="line">example1.items.splice(indexOfItem, <span class="number">1</span>, newValue)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-comment">// Vue.set</span>
+Vue.set(vm.items, indexOfItem, newValue)</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Array.prototype.splice</span>
+vm.items.splice(indexOfItem, <span class="hljs-number">1</span>, newValue)</code></pre>
+<p>你也可以使用 <a href="https://cn.vuejs.org/v2/api/#vm-set"><code>vm.$set</code></a> 实例方法，该方法是全局方法 <code>Vue.set</code> 的一个别名：</p>
+<pre><code class="hljs js">vm.$set(vm.items, indexOfItem, newValue)</code></pre>
 <p>为了解决第二类问题，你可以使用 <code>splice</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">example1.items.splice(newLength)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">vm.items.splice(newLength)</code></pre>
 <h2 id="对象更改检测注意事项"><a href="#对象更改检测注意事项" class="headerlink" title="对象更改检测注意事项"></a>对象更改检测注意事项</h2><p>还是由于 JavaScript 的限制，<strong>Vue 不能检测对象属性的添加或删除</strong>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// `vm.a` 现在是响应式的</span></span><br><span class="line"></span><br><span class="line">vm.b = <span class="number">2</span></span><br><span class="line"><span class="comment">// `vm.b` 不是响应式的</span></span><br></pre></td></tr></table></figure>
-<p>对于已经创建的实例，Vue 不能动态添加根级别的响应式属性。但是，可以使用 <code>Vue.set(object, key, value)</code> 方法向嵌套对象添加响应式属性。例如，对于：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    userProfile: &#123;</span><br><span class="line">      name: <span class="string">'Anika'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>
+  &#125;
+&#125;)
+<span class="hljs-comment">// `vm.a` 现在是响应式的</span>
+
+vm.b = <span class="hljs-number">2</span>
+<span class="hljs-comment">// `vm.b` 不是响应式的</span></code></pre>
+<p>对于已经创建的实例，Vue 不能动态添加根级别的响应式属性。但是，可以使用 <code>Vue.set(object, propertyName, value)</code> 方法向嵌套对象添加响应式属性。例如，对于：</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">userProfile</span>: &#123;
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'Anika'</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
 <p>你可以添加一个新的 <code>age</code> 属性到嵌套的 <code>userProfile</code> 对象：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.set(vm.userProfile, <span class="string">'age'</span>, <span class="number">27</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">Vue.set(vm.userProfile, <span class="hljs-string">'age'</span>, <span class="hljs-number">27</span>)</code></pre>
 <p>你还可以使用 <code>vm.$set</code> 实例方法，它只是全局 <code>Vue.set</code> 的别名：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">vm.$set(<span class="keyword">this</span>.userProfile, <span class="string">'age'</span>, <span class="number">27</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">vm.$set(vm.userProfile, <span class="hljs-string">'age'</span>, <span class="hljs-number">27</span>)</code></pre>
 <p>有时你可能需要为已有对象赋予多个新属性，比如使用 <code>Object.assign()</code> 或 <code>_.extend()</code>。在这种情况下，你应该用两个对象的属性创建一个新的对象。所以，如果你想添加新的响应式属性，不要像这样：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.assign(<span class="keyword">this</span>.userProfile, &#123;</span><br><span class="line">  age: <span class="number">27</span>,</span><br><span class="line">  favoriteColor: <span class="string">'Vue Green'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-built_in">Object</span>.assign(vm.userProfile, &#123;
+  <span class="hljs-attr">age</span>: <span class="hljs-number">27</span>,
+  <span class="hljs-attr">favoriteColor</span>: <span class="hljs-string">'Vue Green'</span>
+&#125;)</code></pre>
 <p>你应该这样做：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.userProfile = <span class="built_in">Object</span>.assign(&#123;&#125;, <span class="keyword">this</span>.userProfile, &#123;</span><br><span class="line">  age: <span class="number">27</span>,</span><br><span class="line">  favoriteColor: <span class="string">'Vue Green'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">vm.userProfile = <span class="hljs-built_in">Object</span>.assign(&#123;&#125;, vm.userProfile, &#123;
+  <span class="hljs-attr">age</span>: <span class="hljs-number">27</span>,
+  <span class="hljs-attr">favoriteColor</span>: <span class="hljs-string">'Vue Green'</span>
+&#125;)</code></pre>
 <h2 id="显示过滤-排序结果"><a href="#显示过滤-排序结果" class="headerlink" title="显示过滤/排序结果"></a>显示过滤/排序结果</h2><p>有时，我们想要显示一个数组的过滤或排序副本，而不实际改变或重置原始数据。在这种情况下，可以创建返回过滤或排序数组的计算属性。</p>
 <p>例如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"n in evenNumbers"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  numbers: [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> ]</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">  evenNumbers: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.numbers.filter(<span class="function"><span class="keyword">function</span> (<span class="params">number</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> number % <span class="number">2</span> === <span class="number">0</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"n in evenNumbers"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code></pre>
+<pre><code class="hljs js">data: &#123;
+  <span class="hljs-attr">numbers</span>: [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> ]
+&#125;,
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">evenNumbers</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.numbers.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">number</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> number % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>
+    &#125;)
+  &#125;
+&#125;</code></pre>
 <p>在计算属性不适用的情况下 (例如，在嵌套 <code>v-for</code> 循环中) 你可以使用一个 method 方法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"n in even(numbers)"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  numbers: [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> ]</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">  even: <span class="function"><span class="keyword">function</span> (<span class="params">numbers</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> numbers.filter(<span class="function"><span class="keyword">function</span> (<span class="params">number</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> number % <span class="number">2</span> === <span class="number">0</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"n in even(numbers)"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code></pre>
+<pre><code class="hljs js">data: &#123;
+  <span class="hljs-attr">numbers</span>: [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> ]
+&#125;,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">even</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">numbers</span>) </span>&#123;
+    <span class="hljs-keyword">return</span> numbers.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">number</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> number % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>
+    &#125;)
+  &#125;
+&#125;</code></pre>
 <h2 id="一段取值范围的-v-for"><a href="#一段取值范围的-v-for" class="headerlink" title="一段取值范围的 v-for"></a>一段取值范围的 <code>v-for</code></h2><p><code>v-for</code> 也可以取整数。在这种情况下，它将重复多次模板。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span>=<span class="string">"n in 10"</span>&gt;</span>&#123;&#123; n &#125;&#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"n in 10"</span>&gt;</span>&#123;&#123; n &#125;&#125; <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p>结果：</p>
 
 <div id="range" class="demo">
@@ -1042,31 +1338,112 @@ new Vue({
 </script>
 
 <h2 id="v-for-on-a-lt-template-gt"><a href="#v-for-on-a-lt-template-gt" class="headerlink" title="v-for on a &lt;template&gt;"></a><code>v-for</code> on a <code>&lt;template&gt;</code></h2><p>类似于 <code>v-if</code>，你也可以利用带有 <code>v-for</code> 的 <code>&lt;template&gt;</code> 渲染多个元素。比如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.msg &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="v-for-with-v-if"><a href="#v-for-with-v-if" class="headerlink" title="v-for with v-if"></a><code>v-for</code> with <code>v-if</code></h2><p>当它们处于同一节点，<code>v-for</code> 的优先级比 <code>v-if</code> 更高，这意味着 <code>v-if</code> 将分别重复运行于每个 <code>v-for</code> 循环中。当你想为仅有的<em>一些</em>项渲染节点时，这种优先级的机制会十分有用，如下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span> <span class="attr">v-if</span>=<span class="string">"!todo.isComplete"</span>&gt;</span></span><br><span class="line">  &#123;&#123; todo &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#123;&#123; item.msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"divider"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<h2 id="v-for-with-v-if"><a href="#v-for-with-v-if" class="headerlink" title="v-for with v-if"></a><code>v-for</code> with <code>v-if</code></h2><p class="tip">注意我们<strong>不</strong>推荐同时使用 <code>v-if</code> 和 <code>v-for</code>。更多细节可查阅<a href="/v2/style-guide/#避免-v-if-和-v-for-用在一起-必要">风格指南</a>。</p>
+
+<p>当它们处于同一节点，<code>v-for</code> 的优先级比 <code>v-if</code> 更高，这意味着 <code>v-if</code> 将分别重复运行于每个 <code>v-for</code> 循环中。当你想为仅有的<em>一些</em>项渲染节点时，这种优先级的机制会十分有用，如下：</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in todos"</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"!todo.isComplete"</span>&gt;</span>
+  &#123;&#123; todo &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code></pre>
 <p>上面的代码只传递了未完成的 todos。</p>
 <p>而如果你的目的是有条件地跳过循环的执行，那么可以将 <code>v-if</code> 置于外层元素 (或 <a href="conditional.html#在-lt-template-gt-中配合-v-if-条件渲染一整组"><code>&lt;template&gt;</code></a>)上。如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">v-if</span>=<span class="string">"todos.length"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span>&gt;</span></span><br><span class="line">    &#123;&#123; todo &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else</span>&gt;</span>No todos left!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todos.length"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in todos"</span>&gt;</span>
+    &#123;&#123; todo &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-else</span>&gt;</span>No todos left!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
 <h2 id="一个组件的-v-for"><a href="#一个组件的-v-for" class="headerlink" title="一个组件的 v-for"></a>一个组件的 <code>v-for</code></h2><blockquote>
 <p>了解组件相关知识，查看 <a href="components.html">组件</a>。完全可以先跳过它，以后再回来查看。</p>
 </blockquote>
 <p>在自定义组件里，你可以像任何普通元素一样用 <code>v-for</code> 。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"item.id"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
 <blockquote>
 <p>2.2.0+ 的版本里，当在组件中使用 <code>v-for</code> 时，<code>key</code> 现在是必须的。</p>
 </blockquote>
 <p>然而，任何数据都不会被自动传递到组件里，因为组件有自己独立的作用域。为了把迭代数据传递到组件里，我们要用 <code>props</code> ：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-bind:item</span>=<span class="string">"item"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-bind:index</span>=<span class="string">"index"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-bind:key</span>=<span class="string">"item.id"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>
+  <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(item, index) in items"</span>
+  <span class="hljs-attr">v-bind:item</span>=<span class="hljs-string">"item"</span>
+  <span class="hljs-attr">v-bind:index</span>=<span class="hljs-string">"index"</span>
+  <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item.id"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
 <p>不自动将 <code>item</code> 注入到组件里的原因是，这会使得组件与 <code>v-for</code> 的运作紧密耦合。明确组件数据的来源能够使组件在其他场合重复使用。</p>
 <p>下面是一个简单的 todo list 的完整例子：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"todo-list-example"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-model</span>=<span class="string">"newTodoText"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-on:keyup.enter</span>=<span class="string">"addNewTodo"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">placeholder</span>=<span class="string">"Add a todo"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span></span></span><br><span class="line"><span class="tag">      <span class="attr">is</span>=<span class="string">"todo-item"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-for</span>=<span class="string">"(todo, index) in todos"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-bind:key</span>=<span class="string">"todo.id"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-bind:title</span>=<span class="string">"todo.title"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-on:remove</span>=<span class="string">"todos.splice(index, 1)"</span></span></span><br><span class="line"><span class="tag">    &gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p class="tip">注意这里的 <code>is=&quot;todo-item&quot;</code> 属性。这种做法在使用 DOM 模板时是十分必要的，因为在 <code>&lt;ul&gt;</code> 元素内只有 <code>&lt;li&gt;</code> 元素会被看作有效内容。这样做实现的效果与 <code>&lt;todo-item&gt;</code> 相同，但是可以避开一些潜在的浏览器解析错误。查看 <a href="components.html#DOM-模板解析说明">DOM 模板解析说明</a> 来了解更多信息。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"todo-list-example"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">v-on:submit.prevent</span>=<span class="hljs-string">"addNewTodo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"new-todo"</span>&gt;</span>Add a todo<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+      <span class="hljs-attr">v-model</span>=<span class="hljs-string">"newTodoText"</span>
+      <span class="hljs-attr">id</span>=<span class="hljs-string">"new-todo"</span>
+      <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"E.g. Feed the cat"</span>
+    &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+      <span class="hljs-attr">is</span>=<span class="hljs-string">"todo-item"</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(todo, index) in todos"</span>
+      <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"todo.id"</span>
+      <span class="hljs-attr">v-bind:title</span>=<span class="hljs-string">"todo.title"</span>
+      <span class="hljs-attr">v-on:remove</span>=<span class="hljs-string">"todos.splice(index, 1)"</span>
+    &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p class="tip">注意这里的 <code>is=&quot;todo-item&quot;</code> 属性。这种做法在使用 DOM 模板时是十分必要的，因为在 <code>&lt;ul&gt;</code> 元素内只有 <code>&lt;li&gt;</code> 元素会被看作有效内容。这样做实现的效果与 <code>&lt;todo-item&gt;</code> 相同，但是可以避开一些潜在的浏览器解析错误。查看 <a href="components.html#解析-DOM-模板时的注意事项">DOM 模板解析说明</a> 来了解更多信息。</p>
 
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">'todo-item'</span>, &#123;</span><br><span class="line">  template: <span class="string">'\</span></span><br><span class="line"><span class="string">    &lt;li&gt;\</span></span><br><span class="line"><span class="string">      &#123;&#123; title &#125;&#125;\</span></span><br><span class="line"><span class="string">      &lt;button v-on:click="$emit(\'remove\')"&gt;X&lt;/button&gt;\</span></span><br><span class="line"><span class="string">    &lt;/li&gt;\</span></span><br><span class="line"><span class="string">  '</span>,</span><br><span class="line">  props: [<span class="string">'title'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#todo-list-example'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    newTodoText: <span class="string">''</span>,</span><br><span class="line">    todos: [</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">1</span>,</span><br><span class="line">        title: <span class="string">'Do the dishes'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">2</span>,</span><br><span class="line">        title: <span class="string">'Take out the trash'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">3</span>,</span><br><span class="line">        title: <span class="string">'Mow the lawn'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    nextTodoId: <span class="number">4</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    addNewTodo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.todos.push(&#123;</span><br><span class="line">        id: <span class="keyword">this</span>.nextTodoId++,</span><br><span class="line">        title: <span class="keyword">this</span>.newTodoText</span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="keyword">this</span>.newTodoText = <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'todo-item'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'\
+    &lt;li&gt;\
+      &#123;&#123; title &#125;&#125;\
+      &lt;button v-on:click="$emit(\'remove\')"&gt;Remove&lt;/button&gt;\
+    &lt;/li&gt;\
+  '</span>,
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'title'</span>]
+&#125;)
+
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#todo-list-example'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">newTodoText</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">todos</span>: [
+      &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'Do the dishes'</span>,
+      &#125;,
+      &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'Take out the trash'</span>,
+      &#125;,
+      &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'Mow the lawn'</span>
+      &#125;
+    ],
+    <span class="hljs-attr">nextTodoId</span>: <span class="hljs-number">4</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">addNewTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.todos.push(&#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-keyword">this</span>.nextTodoId++,
+        <span class="hljs-attr">title</span>: <span class="hljs-keyword">this</span>.newTodoText
+      &#125;)
+      <span class="hljs-keyword">this</span>.newTodoText = <span class="hljs-string">''</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
 
 <div id="todo-list-example" class="demo">
-  <input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
+  <form v-on:submit.prevent="addNewTodo">
+    <label for="new-todo">Add a todo</label>
+    <input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the cat">
+    <button>Add</button>
+  </form>
   <ul>
     <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title" v-on:remove="todos.splice(index, 1)"></li>
   </ul>
@@ -1076,7 +1453,7 @@ Vue.component('todo-item', {
   template: '\
     <li>\
       {{ title }}\
-      <button v-on:click="$emit(\'remove\')">X</button>\
+      <button v-on:click="$emit(\'remove\')">Remove</button>\
     </li>\
   ',
   props: ['title']
@@ -1116,9 +1493,12 @@ new Vue({
 
 
   
+  
     <div class="guide-links">
       
+      
         <span>← <a href="/v2/guide/conditional.html">条件渲染</a></span>
+      
       
       
         <span style="float: right;"><a href="/v2/guide/events.html">事件处理</a> →</span>
@@ -1126,7 +1506,7 @@ new Vue({
     </div>
   
   <div class="footer">
-    <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <div class="bsa-cpc"></div>
 <script>
   (function(){
@@ -1142,7 +1522,7 @@ new Vue({
 
     发现错误？想参与编辑？
     <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/v2/guide/list.md" target="_blank">
-      在 Github 上编辑此页！
+      在 GitHub 上编辑此页！
     </a>
   </div>
 </div>
@@ -1175,7 +1555,8 @@ new Vue({
       apiKey: '5638280abff9d207417bb03be05f0b25',
       indexName: 'vuejs_cn2',
       inputSelector: selector,
-      algoliaOptions: { facetFilters: ["version:" + version] }
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })
     </script>
